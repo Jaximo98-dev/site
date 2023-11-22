@@ -304,7 +304,7 @@
             }, func(db dbx.Builder) error { // optional revert operation
                 dao := daos.New(db)
 
-                record := dao.FindFirstAuthRecordByEmail("users", "test@example.com")
+                record := dao.FindAuthRecordByEmail("users", "test@example.com")
                 if record != nil {
                     return dao.DeleteRecord(record)
                 }
